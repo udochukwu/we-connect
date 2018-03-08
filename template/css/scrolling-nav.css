@@ -1,0 +1,27 @@
+header {
+  padding: 154px 0 100px;
+}
+.header_short{
+   padding: 100px 0 100px;
+}
+#header_1{
+  background-image: url("../images/main_bg.jpeg");
+}
+.bg_dark{
+  background-color:#252A30;
+}
+@media (min-width: 992px) {
+  header {
+    padding: 156px 0 100px;
+  }
+}
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+  #slick_1 img {
+    height: 150px;
+    width:250px;
+  }
+}
+section {
+  padding:0px;
+}
