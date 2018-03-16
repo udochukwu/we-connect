@@ -4,7 +4,9 @@
   "description": "we-connect connects businesses to clients.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "",
+    "build": "babel server/src -d server/lib && mocha server/lib/tests/",
+    "start": "nodemon server/lib/app.js"
   },
   "repository": {
     "type": "git",
