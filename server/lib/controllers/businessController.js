@@ -63,17 +63,13 @@ var BusinessController = function () {
         value: function getBusinessById(req, res) {
 
             var id = req.params.businessId;
-
             var business = _dummyDb.businesses.find(function (businessItem) {
-                return +businessItem.businessId === +id;
+                return +businessItem.id === +id;
             });
-
             if (!business) {
-
                 return res.status(404).json({ message: 'Business with businessId ' + id + ' does not exist' });
             }
-
-            return res.json({ message: 'business search was successful', business: business });
+            return res.json({ message: 'Business search was successful', business: business });
         }
 
         /**
@@ -92,36 +88,23 @@ var BusinessController = function () {
         key: 'createBusiness',
         value: function createBusiness(req, res) {
 
-            var businessId = _dummyDb.businesses.length === 0 ? 1 : _dummyDb.businesses[_dummyDb.businesses.length - 1].businessId + 1;
-
+            var id = _dummyDb.businesses.length === 0 ? 1 : _dummyDb.businesses.length + 1;
             var _req$body = req.body,
-                businessName = _req$body.businessName,
-                businessAddress = _req$body.businessAddress,
-                location = _req$body.location,
+                userId = _req$body.userId,
+                description = _req$body.description,
                 category = _req$body.category,
-                userId = _req$body.userId;
+                location = _req$body.location;
 
 
             var newBusiness = {
-
-                businessId: businessId,
-
-                businessName: businessName,
-
-                businessAddress: businessAddress,
-
-                location: location,
-
-                category: category,
-
+                id: id,
                 userId: userId,
-
+                description: description,
+                category: category,
+                location: location,
                 reviews: []
-
             };
-
             _dummyDb.businesses.push(newBusiness);
-
             return res.status(201).send({ message: 'business successfully added', newBusiness: newBusiness });
         }
 

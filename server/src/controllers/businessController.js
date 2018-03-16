@@ -47,18 +47,11 @@ class BusinessController {
   static getBusinessById(req, res) {
 
     const id = req.params.businessId;
-
-    const business = businesses.find(businessItem => +businessItem.businessId === +id);
-
+    const business = businesses.find(businessItem => +businessItem.id === +id);
     if (!business) {
-
       return res.status(404).json({ message: `Business with businessId ${id} does not exist` });
-
     }
-
-    return res.json({ message: 'business search was successful', business });
-
-
+    return res.json({ message: 'Business search was successful', business });
   }
 
 
@@ -75,47 +68,24 @@ class BusinessController {
      */
   static createBusiness(req, res) {
 
-    const businessId = businesses.length === 0 ? 1 :
-
-      businesses[businesses.length - 1].businessId + 1;
-
+    const id = businesses.length === 0 ? 1 : businesses.length + 1;
     const {
-
-      businessName,
-
-      businessAddress,
-
-      location,
-
+      userId,
+      description,
       category,
-
-      userId
-
+      location
     } = req.body;
 
     const newBusiness = {
-
-      businessId,
-
-      businessName,
-
-      businessAddress,
-
-      location,
-
-      category,
-
+      id,
       userId,
-
+      description,
+      category,
+      location,
       reviews: []
-
     };
-
     businesses.push(newBusiness);
-
     return res.status(201).send({ message: 'business successfully added', newBusiness });
-
-
   }
 
   /**
