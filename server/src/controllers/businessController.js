@@ -103,7 +103,7 @@ class BusinessController {
 
     const id = req.params.businessId;
 
-    const business = businesses.find(businessItem => +businessItem.businessId === +id);
+    const business = businesses.find(businessItem => +businessItem.id === +id);
 
     if (!business) {
 
@@ -115,34 +115,22 @@ class BusinessController {
 
     const {
 
-      businessName,
-
-      businessAddress,
-
-      location,
-
+      name,
+      description,
       category,
-
-      userId
-
+      location
     } = req.body;
 
-    if (businessName) {
+    if (name) {
 
-      business.businessName = businessName;
-
-    }
-
-
-    if (businessAddress) {
-
-      business.businessAddress = businessAddress;
+      business.name = name;
 
     }
 
-    if (location) {
 
-      business.location = location;
+    if (description) {
+
+      business.description = description;
 
     }
 
@@ -152,17 +140,15 @@ class BusinessController {
 
     }
 
-    if (userId) {
+    if (location) {
 
-      business.userId = userId;
+      business.location = location;
 
     }
-
 
     businesses[businessIndex] = business;
 
     return res.json({ message: 'business updated successfully', business });
-
 
   }
 

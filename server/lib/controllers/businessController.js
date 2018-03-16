@@ -127,7 +127,7 @@ var BusinessController = function () {
             var id = req.params.businessId;
 
             var business = _dummyDb.businesses.find(function (businessItem) {
-                return +businessItem.businessId === +id;
+                return +businessItem.id === +id;
             });
 
             if (!business) {
@@ -138,26 +138,20 @@ var BusinessController = function () {
             var businessIndex = _dummyDb.businesses.indexOf(business);
 
             var _req$body2 = req.body,
-                businessName = _req$body2.businessName,
-                businessAddress = _req$body2.businessAddress,
-                location = _req$body2.location,
+                name = _req$body2.name,
+                description = _req$body2.description,
                 category = _req$body2.category,
-                userId = _req$body2.userId;
+                location = _req$body2.location;
 
 
-            if (businessName) {
+            if (name) {
 
-                business.businessName = businessName;
+                business.name = name;
             }
 
-            if (businessAddress) {
+            if (description) {
 
-                business.businessAddress = businessAddress;
-            }
-
-            if (location) {
-
-                business.location = location;
+                business.description = description;
             }
 
             if (category) {
@@ -165,9 +159,9 @@ var BusinessController = function () {
                 business.category = category;
             }
 
-            if (userId) {
+            if (location) {
 
-                business.userId = userId;
+                business.location = location;
             }
 
             _dummyDb.businesses[businessIndex] = business;
