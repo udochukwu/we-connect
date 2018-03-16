@@ -1,0 +1,19 @@
+{
+  "name": "we-connect",
+  "version": "1.0.0",
+  "description": "we-connect connects businesses to clients.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udochukwu/we-connect.git"
+  },
+  "author": "udochukwu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udochukwu/we-connect/issues"
+  },
+  "homepage": "https://github.com/udochukwu/we-connect#readme"
+}
