@@ -8,16 +8,20 @@ const {
   getAllBusinesses,
   getBusinessById,
   createBusiness,
-  updateBusiness
+  updateBusiness,
+  filterSearchByCategory,
+  filterSearchByLocation,
+  removeBusiness
 } = BusinessController;
 
 Router.get('/businesses', getAllBusinesses);
 
-Router.get('/businesses/:businessId', getBusinessById);
+Router.get('/businesses/:businessId', filterSearchByLocation, filterSearchByCategory, getBusinessById);
 
 Router.post('/businesses', createBusiness);
 
 Router.post('/businesses/:businessId', updateBusiness);
 
+Router.delete('/businesses/:businessId', removeBusiness);
 
 export default Router;

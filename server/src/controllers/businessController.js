@@ -71,6 +71,7 @@ class BusinessController {
     const id = businesses.length === 0 ? 1 : businesses.length + 1;
     const {
       userId,
+      name,
       description,
       category,
       location
@@ -79,6 +80,7 @@ class BusinessController {
     const newBusiness = {
       id,
       userId,
+      name,
       description,
       category,
       location,
@@ -106,9 +108,7 @@ class BusinessController {
     const business = businesses.find(businessItem => +businessItem.id === +id);
 
     if (!business) {
-
       return res.status(404).json({ message: `Business with businessId ${id} does not exist!` });
-
     }
 
     const businessIndex = businesses.indexOf(business);
@@ -166,21 +166,14 @@ class BusinessController {
   static removeBusiness(req, res) {
 
     const id = req.params.businessId;
-
-    const business = businesses.find(businessItem => +businessItem.businessId === +id);
+    const business = businesses.find(businessItem => +businessItem.id === +id);
 
     if (!business) {
-
       return res.status(404).json({ message: `business with businessId ${id} does not exist` });
-
     }
 
-
     businesses.splice(businesses.indexOf(business), 1);
-
     return res.status(204).json({ message: `business with businessId ${id} was deleted successfully` });
-
-
   }
 
   /**
@@ -200,20 +193,14 @@ class BusinessController {
     const { location } = req.query;
 
     if (location) {
-
-      const searchBusinessResults = businesses.filter(businessItem =>
-
+      const result = businesses.filter(businessItem =>
         businessItem.location === location);
 
-      if (searchBusinessResults.length === 0) {
-
+      if (result.length === 0) {
         return res.status(404).json({ message: `Business under location ${location} not found` });
-
       }
 
-      return res.status(200).json({ message: 'Search was successful', searchBusinessResults });
-
-
+      return res.status(200).json({ message: 'Search was successful', result });
     }
 
     return next();
@@ -239,24 +226,17 @@ class BusinessController {
     const { category } = req.query;
 
     if (category) {
-
-      const searchBusinessResults = businesses.filter(businessItem =>
-
+      const result = businesses.filter(businessItem =>
         businessItem.category === category);
 
-      if (searchBusinessResults.length === 0) {
-
+      if (result.length === 0) {
         return res.status(404).json({ message: `Business under category ${category} not found!` });
-
       }
 
-      return res.status(200).json({ message: 'Search was successful', searchBusinessResults });
-
-
+      return res.status(200).json({ message: 'Search was successful', result });
     }
 
     next();
-
   }
 
 }

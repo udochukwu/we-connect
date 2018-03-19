@@ -91,6 +91,7 @@ var BusinessController = function () {
             var id = _dummyDb.businesses.length === 0 ? 1 : _dummyDb.businesses.length + 1;
             var _req$body = req.body,
                 userId = _req$body.userId,
+                name = _req$body.name,
                 description = _req$body.description,
                 category = _req$body.category,
                 location = _req$body.location;
@@ -99,6 +100,7 @@ var BusinessController = function () {
             var newBusiness = {
                 id: id,
                 userId: userId,
+                name: name,
                 description: description,
                 category: category,
                 location: location,
@@ -131,7 +133,6 @@ var BusinessController = function () {
             });
 
             if (!business) {
-
                 return res.status(404).json({ message: 'Business with businessId ' + id + ' does not exist!' });
             }
 
@@ -186,18 +187,15 @@ var BusinessController = function () {
         value: function removeBusiness(req, res) {
 
             var id = req.params.businessId;
-
             var business = _dummyDb.businesses.find(function (businessItem) {
-                return +businessItem.businessId === +id;
+                return +businessItem.id === +id;
             });
 
             if (!business) {
-
                 return res.status(404).json({ message: 'business with businessId ' + id + ' does not exist' });
             }
 
             _dummyDb.businesses.splice(_dummyDb.businesses.indexOf(business), 1);
-
             return res.status(204).json({ message: 'business with businessId ' + id + ' was deleted successfully' });
         }
 
