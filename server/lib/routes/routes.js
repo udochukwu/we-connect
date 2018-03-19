@@ -14,16 +14,21 @@ var _businessController2 = _interopRequireDefault(_businessController);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import BusinessValidation from '../middlewares/BusinessValidation';
+
+
 var Router = _express2.default.Router();
 
 var getAllBusinesses = _businessController2.default.getAllBusinesses,
     getBusinessById = _businessController2.default.getBusinessById,
     createBusiness = _businessController2.default.createBusiness,
     updateBusiness = _businessController2.default.updateBusiness,
+    filterSearchByCategory = _businessController2.default.filterSearchByCategory,
+    filterSearchByLocation = _businessController2.default.filterSearchByLocation,
     removeBusiness = _businessController2.default.removeBusiness;
 
 
-Router.get('/businesses', getAllBusinesses);
+Router.get('/businesses', filterSearchByLocation, filterSearchByCategory, getAllBusinesses);
 
 Router.get('/businesses/:businessId', getBusinessById);
 

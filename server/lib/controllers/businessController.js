@@ -219,17 +219,15 @@ var BusinessController = function () {
 
 
             if (location) {
-
-                var searchBusinessResults = _dummyDb.businesses.filter(function (businessItem) {
+                var result = _dummyDb.businesses.filter(function (businessItem) {
                     return businessItem.location === location;
                 });
 
-                if (searchBusinessResults.length === 0) {
-
+                if (result.length === 0) {
                     return res.status(404).json({ message: 'Business under location ' + location + ' not found' });
                 }
 
-                return res.status(200).json({ message: 'Search was successful', searchBusinessResults: searchBusinessResults });
+                return res.status(200).json({ message: 'Search was successful', result: result });
             }
 
             return next();
@@ -257,17 +255,15 @@ var BusinessController = function () {
 
 
             if (category) {
-
-                var searchBusinessResults = _dummyDb.businesses.filter(function (businessItem) {
+                var result = _dummyDb.businesses.filter(function (businessItem) {
                     return businessItem.category === category;
                 });
 
-                if (searchBusinessResults.length === 0) {
-
+                if (result.length === 0) {
                     return res.status(404).json({ message: 'Business under category ' + category + ' not found!' });
                 }
 
-                return res.status(200).json({ message: 'Search was successful', searchBusinessResults: searchBusinessResults });
+                return res.status(200).json({ message: 'Search was successful', result: result });
             }
 
             next();

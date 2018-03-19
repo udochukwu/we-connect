@@ -2,6 +2,9 @@ import express from 'express';
 
 import BusinessController from '../controllers/businessController';
 
+// import BusinessValidation from '../middlewares/BusinessValidation';
+
+
 const Router = express.Router();
 
 const {
@@ -14,9 +17,9 @@ const {
   removeBusiness
 } = BusinessController;
 
-Router.get('/businesses', getAllBusinesses);
+Router.get('/businesses', filterSearchByLocation, filterSearchByCategory, getAllBusinesses);
 
-Router.get('/businesses/:businessId', filterSearchByLocation, filterSearchByCategory, getBusinessById);
+Router.get('/businesses/:businessId', getBusinessById);
 
 Router.post('/businesses', createBusiness);
 
