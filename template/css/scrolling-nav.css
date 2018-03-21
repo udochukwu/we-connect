@@ -10,6 +10,15 @@ header {
 .bg_dark{
   background-color:#252A30;
 }
+
+#business_profile{
+ padding-left:10px;
+ padding-right:10px;
+ padding-top:10px;
+ padding-bottom:10px;
+ background: #ffffff;
+}
+
 @media (min-width: 992px) {
   header {
     padding: 156px 0 100px;
