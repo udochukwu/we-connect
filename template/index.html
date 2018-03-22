@@ -76,13 +76,13 @@
       </div>
     </header>
       <hr>
-      <section class="mx-4">
-        <div>
-                      <div class="input-group mb-3">
+      <section class="mx-4 sticky pt-3">
+        <div class="row">
+                      <div class="input-group mb-3 col-md-2 col-2">
                         <!-- <div class="input-group-prepend">
                           <label class="input-group-text" for="inputGroupSelect01">Select Category</label>
                         </div> -->
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select btn-orange text-white" id="inputGroupSelect01">
                           <option value="category" selected disabled>Select Category</option>                            
                           <option value="finance">Finance</option>
                           <option value="1">Medical</option>
@@ -90,15 +90,33 @@
                           <option value="3">Marketing</option>
                         </select>
                       </div>
+                      <div class="input-group mb-3 col-md-2  col-2">
+                        <!-- <div class="input-group-prepend">
+                          <label class="input-group-text" for="inputGroupSelect01">Select Category</label>
+                        </div> -->
+                        <select class="custom-select btn-orange text-white" id="inputGroupSelect01">
+                          <option value="category" selected disabled>Select Category</option>                            
+                          <option value="finance">Finance</option>
+                          <option value="1">Medical</option>
+                          <option value="2">Ict</option>
+                          <option value="3">Marketing</option>
+                        </select>
+                      </div>
+                        <div class="input-group mb-3 col-md-8 col-8">
+                        <input type="text" class="form-control" placeholder="search business" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary btn-orange text-white" type="button "><i class="fas fa-search"></i></button>
+                        </div>
+                        </div>
       </div>
     </section>
      <section class="p-0 m-4">
-        <div class="row">
+        <div class="row text-center">
             <div class="col-md-12 my-3">
                 <h2>popular today</h2>
             </div>
             
-            <div class="col-md-2 col-sm-4 business_pointer u-none">
+            <div class="col-md-2 col-sm-4 col-xs-8 offset-xs-2 business_pointer u-none">
                 <a href="businessProfile.html">
                     <div class="card mb-3 text-dark " style="max-width: 18rem;">
                         <div class="card-heade bg-transparent">
