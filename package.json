@@ -4,9 +4,10 @@
   "description": "we-connect connects businesses to clients.",
   "main": "app.js",
   "scripts": {
-    "test": "",
-    "build": "babel server/src -d server/lib && mocha server/lib/",
-    "start": "nodemon server/lib/app.js"
+    "test": "nyc --require babel-register --require babel-polyfill mocha server/src/tests/**/*.js --exit ",
+    "start": "babel-node server/src/app.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test"
   },
   "repository": {
     "type": "git",
