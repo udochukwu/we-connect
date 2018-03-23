@@ -1,0 +1,66 @@
+header {
+  padding: 154px 0 100px;
+}
+.header_short{
+   padding: 100px 0 100px;
+}
+#header_1{
+  background-image: url("../images/main_bg.jpeg");
+}
+.bg_dark{
+  background-color:#252A30;
+}
+.star-active{
+  color:#EC9053;
+}
+.btn-orange{
+  background-color: #ef8a0e;
+}
+.u-none a:hover{
+  text-decoration: none;
+}
+.star-4{
+  background-color: #4faf64;
+}
+.star-3{
+  background-color: #90d116;
+}
+.star-2{
+  background-color: #d1af16;
+}
+.star-1{
+  background-color: #e20808;
+}
+.fa-star{
+  cursor: pointer;
+}
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 55px;
+  z-index:10;
+  background-color: #ffffff;
+}
+#business_profile{
+ padding-left:10px;
+ padding-right:10px;
+ padding-top:10px;
+ padding-bottom:10px;
+ background: #ffffff;
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 156px 0 100px;
+  }
+}
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+  #slick_1 img {
+    height: 150px;
+    width:250px;
+  }
+}
+section {
+  padding:0px;
+}
