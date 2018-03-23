@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/udochukwu/we-connect.svg?branch=develop)](https://travis-ci.org/udochukwu/we-connect)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/76094e39fd914f626ecc/maintainability)](https://codeclimate.com/github/udochukwu/we-connect/maintainability)
+
 ## Application - Description
 WeConnect provides a platform that brings businesses and individuals together. This platform
 creates awareness for businesses and gives the users the ability to write reviews about the
