@@ -1,6 +1,6 @@
 # WEConnect
 
-https://travis-ci.org/udochukwu/we-connect.svg?branch=develop
+[![Build Status](https://travis-ci.org/udochukwu/we-connect.svg?branch=develop)](https://travis-ci.org/udochukwu/we-connect)
 
 ## Application - Description
 WeConnect provides a platform that brings businesses and individuals together. This platform
